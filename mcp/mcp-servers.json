@@ -1,0 +1,19 @@
+{
+  "servers": {
+    "jarvis-ol1": {
+      "type": "ollama",
+      "url": "http://127.0.0.1:11434",
+      "models": ["gemma3:4b", "qwen3:1.7b", "deepseek-r1:7b", "kimi-k2.5:cloud"]
+    },
+    "lmstudio-m1": {
+      "type": "openai-compat",
+      "url": "http://127.0.0.1:1234/v1",
+      "models": ["qwen/qwen3.5-9b", "deepseek/deepseek-r1-0528-qwen3-8b", "qwen/qwen2.5-coder-14b"]
+    },
+    "lmstudio-m2": {
+      "type": "openai-compat",
+      "url": "http://192.168.1.26:1234/v1",
+      "models": ["qwen/qwen3.5-9b", "deepseek/deepseek-r1-0528-qwen3-8b", "qwen/qwen3.5-35b-a3b", "zai-org/glm-4.7-flash", "openai/gpt-oss-20b"]
+    }
+  }
+}

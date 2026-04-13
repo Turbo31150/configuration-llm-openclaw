@@ -1,0 +1,1435 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.11",
+    "lastTouchedAt": "2026-04-11T22:14:37.390Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-04T00:25:50.028Z",
+    "lastRunVersion": "2026.3.11",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "update": {
+    "channel": "dev"
+  },
+  "browser": {
+    "defaultProfile": "franck",
+    "profiles": {
+      "franck": {
+        "cdpUrl": "http://127.0.0.1:9222",
+        "color": "#0066CC"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "apiKey": "ollama-local",
+        "api": "ollama",
+        "models": [
+          {
+            "id": "gemma3:4b",
+            "name": "Gemma3 4B OL1 — léger/rapide",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "deepseek-r1:7b",
+            "name": "DeepSeek R1 7B OL1 — reasoning",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen2.5:1.5b",
+            "name": "Qwen2.5 1.5B OL1 — ultra rapide",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "llama3.2:latest",
+            "name": "LLaMA 3.2 OL1",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "kimi-k2.5:cloud",
+            "name": "Kimi K2.5 Cloud OL1",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 65536,
+            "maxTokens": 8192
+          },
+          {
+            "id": "nomic-embed-text:latest",
+            "name": "Nomic Embed OL1",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 8192,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "lmstudio-m1": {
+        "baseUrl": "http://192.168.1.85:1234/v1",
+        "apiKey": "lmstudio",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "qwen/qwen3.5-9b",
+            "name": "Qwen3.5 9B M1 — rapide",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen3.5-27b-claude-4.6-opus-reasoning-distilled-v2",
+            "name": "★ Qwen3.5 27B Claude4.6 Distillé M1",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 32768
+          },
+          {
+            "id": "glm-4.7-flash-claude-opus-4.5-high-reasoning-distill",
+            "name": "GLM4.7 Claude Opus 4.5 Distillé M1",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 32768
+          },
+          {
+            "id": "zai-org/glm-4.7-flash",
+            "name": "GLM4.7 Flash M1 — ultra rapide",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "google/gemma-4-26b-a4b",
+            "name": "Gemma4 26B M1",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "claudegpt-code-logic-debugger-v0.1",
+            "name": "ClaudeGPT Debugger M1",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 65536,
+            "maxTokens": 16384
+          },
+          {
+            "id": "openai/gpt-oss-20b",
+            "name": "GPT OSS 20B M1",
+            "api": "openai-responses",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 65536,
+            "maxTokens": 16384
+          }
+        ]
+      },
+      "lmstudio-m2": {
+        "baseUrl": "http://192.168.1.26:1234/v1",
+        "apiKey": "lmstudio",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "qwen/qwen3.5-9b",
+            "name": "Qwen3.5 9B M2 — agent worker",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 32768
+          },
+          {
+            "id": "qwen/qwen3.5-35b-a3b",
+            "name": "Qwen3.5 35B M2 — worker puissant",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 32768
+          },
+          {
+            "id": "deepseek/deepseek-r1-0528-qwen3-8b",
+            "name": "DeepSeek R1 8B M2 — reasoning agent",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 32768
+          },
+          {
+            "id": "zai-org/glm-4.7-flash",
+            "name": "GLM4.7 Flash M2 — rapide",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "openai/gpt-oss-20b",
+            "name": "GPT OSS 20B M2 — code",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 65536,
+            "maxTokens": 16384
+          },
+          {
+            "id": "qwen/qwen3-8b",
+            "name": "Qwen3 8B M2 — léger/rapide",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          }
+        ]
+      },
+      "jarvis-proxy": {
+        "baseUrl": "http://127.0.0.1:18800/v1",
+        "apiKey": "YOUR_API_KEY",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "auto",
+            "name": "JARVIS Auto-Route (M1/M2/OL1)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "groq": {
+        "baseUrl": "https://api.groq.com/openai/v1",
+        "apiKey": "YOUR_API_KEY",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "llama-3.3-70b-versatile",
+            "name": "Llama 3.3 70B (Groq free)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "gemma2-9b-it",
+            "name": "Gemma2 9B (Groq free)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0
+            },
+            "contextWindow": 8192,
+            "maxTokens": 4096
+          },
+          {
+            "id": "llama-3.1-8b-instant",
+            "name": "Llama 3.1 8B instant (Groq free)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "openrouter": {
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "apiKey": "YOUR_API_KEY",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "meta-llama/llama-3.2-3b-instruct:free",
+            "name": "Llama 3.2 3B Free",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "mistralai/mistral-7b-instruct:free",
+            "name": "Mistral 7B Free",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 4096
+          },
+          {
+            "id": "google/gemma-3-4b-it:free",
+            "name": "Gemma 3 4B Free",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "deepseek/deepseek-r1:free",
+            "name": "DeepSeek R1 Full FREE",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 65536,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen/qwen3-235b-a22b:free",
+            "name": "Qwen3 235B MoE FREE",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "xai": {
+        "baseUrl": "https://api.x.ai/v1",
+        "apiKey": "YOUR_API_KEY",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "grok-4.20-reasoning",
+            "name": "Grok 4 Reasoning (xAI)",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "grok-3",
+            "name": "Grok 3 (xAI)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "grok-3-mini",
+            "name": "Grok 3 Mini (xAI fast)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "huggingface": {
+        "baseUrl": "https://api-inference.huggingface.co/v1",
+        "apiKey": "YOUR_API_KEY",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "meta-llama/Llama-3.2-3B-Instruct",
+            "name": "LLaMA 3.2 3B HF Free",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 8192,
+            "maxTokens": 2048
+          },
+          {
+            "id": "microsoft/Phi-3.5-mini-instruct",
+            "name": "Phi-3.5 Mini HF Free",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 4096,
+            "maxTokens": 2048
+          }
+        ]
+      },
+      "lmstudio-m3": {
+        "baseUrl": "http://192.168.1.133:1234/v1",
+        "apiKey": "lmstudio",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "mistralai/mistral-7b-instruct",
+            "name": "Mistral 7B Instruct (M3)",
+            "reasoning": false
+          },
+          {
+            "id": "deepseek/deepseek-r1-0528-qwen3-8b",
+            "name": "DeepSeek R1 M3",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 4096
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "lmstudio-m1/qwen/qwen3.5-9b",
+        "fallbacks": [
+          "lmstudio-m2/qwen/qwen3.5-9b",
+          "lmstudio-m1/deepseek/deepseek-r1-0528-qwen3-8b",
+          "lmstudio-m2/deepseek/deepseek-r1-0528-qwen3-8b",
+          "ollama/gemma3:4b"
+        ]
+      },
+      "models": {
+        "lmstudio-m1/qwen/qwen3.5-9b": {
+          "alias": "m1"
+        },
+        "lmstudio-m1/deepseek/deepseek-r1-0528-qwen3-8b": {
+          "alias": "m1-r1"
+        },
+        "lmstudio-m2/qwen/qwen3.5-9b": {
+          "alias": "m2"
+        },
+        "lmstudio-m2/deepseek/deepseek-r1-0528-qwen3-8b": {
+          "alias": "m2-r1"
+        },
+        "lmstudio-m2/qwen/qwen3.5-35b-a3b": {
+          "alias": "big"
+        },
+        "lmstudio-m2/zai-org/glm-4.7-flash": {
+          "alias": "fast"
+        },
+        "ollama/gemma3:4b": {
+          "alias": "ol"
+        },
+        "ollama/kimi-k2.5:cloud": {
+          "alias": "cloud"
+        }
+      },
+      "bootstrapMaxChars": 8000,
+      "memorySearch": {
+        "enabled": false
+      },
+      "contextPruning": {
+        "mode": "off"
+      },
+      "heartbeat": {
+        "every": "30m"
+      },
+      "sandbox": {
+        "mode": "off"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "master",
+        "name": "master",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/master/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "sys-ops",
+        "name": "sys-ops",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/sys-ops/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "linux-admin",
+        "name": "linux-admin",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/linux-admin/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "ai-engine",
+        "name": "ai-engine",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/ai-engine/agent",
+        "model": "lmstudio-m2/qwen/qwen3.5-35b-a3b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cluster-mgr",
+        "name": "cluster-mgr",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cluster-mgr/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "automation",
+        "name": "automation",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/automation/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "monitoring",
+        "name": "monitoring",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/monitoring/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "ops-sre",
+        "name": "ops-sre",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/ops-sre/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "voice-engine",
+        "name": "voice-engine",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/voice-engine/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "comms",
+        "name": "comms",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/comms/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "browser-ops",
+        "name": "browser-ops",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/browser-ops/agent",
+        "model": "lmstudio-m2/qwen/qwen3.5-35b-a3b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "linkedin-agent",
+        "name": "linkedin-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/linkedin-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "codeur-agent",
+        "name": "codeur-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/codeur-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "mail-agent",
+        "name": "mail-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/mail-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-codegen",
+        "name": "cowork-codegen",
+        "workspace": "/home/turbo/jarvis-cowork",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-codegen/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-testing",
+        "name": "cowork-testing",
+        "workspace": "/home/turbo/jarvis-cowork",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-testing/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-deploy",
+        "name": "cowork-deploy",
+        "workspace": "/home/turbo/jarvis-cowork",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-deploy/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-docs",
+        "name": "cowork-docs",
+        "workspace": "/home/turbo/jarvis-cowork",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-docs/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-monitor",
+        "name": "cowork-monitor",
+        "workspace": "/home/turbo/jarvis-cowork",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-monitor/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-git",
+        "name": "cowork-git",
+        "workspace": "/home/turbo/jarvis-cowork",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-git/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-refactor",
+        "name": "cowork-refactor",
+        "workspace": "/home/turbo/jarvis-cowork",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-refactor/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "omega-analysis-agent",
+        "name": "omega-analysis-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/omega-analysis-agent/agent",
+        "model": "lmstudio-m2/qwen/qwen3.5-35b-a3b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "omega-dev-agent",
+        "name": "omega-dev-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/omega-dev-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "omega-docs-agent",
+        "name": "omega-docs-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/omega-docs-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "omega-security-agent",
+        "name": "omega-security-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/omega-security-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "omega-system-agent",
+        "name": "omega-system-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/omega-system-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "omega-voice-agent",
+        "name": "omega-voice-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/omega-voice-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "jarvis-cron-agent",
+        "name": "jarvis-cron-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/jarvis-cron-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "jarvis-memory-agent",
+        "name": "jarvis-memory-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/jarvis-memory-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "jarvis-network-agent",
+        "name": "jarvis-network-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/jarvis-network-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "data-pipeline-agent",
+        "name": "data-pipeline-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/data-pipeline-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "github-agent",
+        "name": "github-agent",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/github-agent/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "coordinator",
+        "name": "coordinator",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/coordinator/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "memory-manager",
+        "name": "memory-manager",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/memory-manager/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "1h"
+        }
+      },
+      {
+        "id": "daily-briefing",
+        "name": "daily-briefing",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/daily-briefing/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "24h"
+        }
+      },
+      {
+        "id": "code-guardian",
+        "name": "code-guardian",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/code-guardian/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "15m"
+        }
+      },
+      {
+        "id": "opportunity-hunter",
+        "name": "opportunity-hunter",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/opportunity-hunter/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "1h"
+        }
+      },
+      {
+        "id": "ai-services",
+        "name": "ai-services",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/ai-services/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "boot-layer",
+        "name": "boot-layer",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/boot-layer/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "business-ops",
+        "name": "business-ops",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/business-ops/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cli-tools",
+        "name": "cli-tools",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cli-tools/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "code-reviewer",
+        "name": "code-reviewer",
+        "workspace": "/home/turbo/.openclaw/workspace",
+        "agentDir": "/home/turbo/.openclaw/agents/code-reviewer/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "comet",
+        "name": "comet",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/comet/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "core-agents",
+        "name": "core-agents",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/core-agents/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-ai",
+        "name": "cowork-ai",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-ai/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-automation",
+        "name": "cowork-automation",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-automation/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-cluster",
+        "name": "cowork-cluster",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-cluster/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-comms",
+        "name": "cowork-comms",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-comms/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-core",
+        "name": "cowork-core",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-core/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-dev",
+        "name": "cowork-dev",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-dev/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-linux",
+        "name": "cowork-linux",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-linux/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-monitoring",
+        "name": "cowork-monitoring",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-monitoring/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-system",
+        "name": "cowork-system",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-system/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-voice",
+        "name": "cowork-voice",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-voice/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "cowork-windows",
+        "name": "cowork-windows",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/cowork-windows/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "data-pipeline",
+        "name": "data-pipeline",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/data-pipeline/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "deployment",
+        "name": "deployment",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/deployment/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "dispatch",
+        "name": "dispatch",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/dispatch/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "infra-scripts",
+        "name": "infra-scripts",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/infra-scripts/agent",
+        "model": "lmstudio-m2/deepseek/deepseek-r1-0528-qwen3-8b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "jarvis-core-agents",
+        "name": "jarvis-core-agents",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/jarvis-core-agents/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "maintenance",
+        "name": "maintenance",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/maintenance/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "misc-ops",
+        "name": "misc-ops",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/misc-ops/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "services-ai",
+        "name": "services-ai",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/services-ai/agent",
+        "model": "lmstudio-m2/qwen/qwen3.5-35b-a3b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "services-business",
+        "name": "services-business",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/services-business/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "services-data",
+        "name": "services-data",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/services-data/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "services-ops",
+        "name": "services-ops",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/services-ops/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "social-growth",
+        "name": "social-growth",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/social-growth/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      },
+      {
+        "id": "win-admin",
+        "name": "win-admin",
+        "workspace": "/home/turbo/Workspaces/jarvis-linux",
+        "agentDir": "/home/turbo/.openclaw/agents/win-admin/agent",
+        "model": "lmstudio-m1/qwen/qwen3.5-9b",
+        "heartbeat": {
+          "every": "30m"
+        }
+      }
+    ]
+  },
+  "tools": {
+    "allow": [
+      "read",
+      "write",
+      "edit",
+      "apply_patch",
+      "exec",
+      "process",
+      "web_search",
+      "web_fetch",
+      "browser",
+      "canvas"
+    ],
+    "web": {}
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "cron": {
+    "enabled": true,
+    "maxConcurrentRuns": 3,
+    "sessionRetention": "48h"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "${env.TELEGRAM_TOKEN}",
+      "groupAllowFrom": [
+        "2010747443"
+      ],
+      "groupPolicy": "allowlist",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:28789",
+        "http://127.0.0.1:28789"
+      ],
+      "dangerouslyAllowHostHeaderOriginFallback": false
+    },
+    "auth": {
+      "mode": "token",
+      "token": "${env.GATEWAY_TOKEN}"
+    }
+  },
+  "plugins": {
+    "allow": [
+      "telegram"
+    ],
+    "load": {
+      "paths": []
+    },
+    "entries": {},
+    "installs": {}
+  }
+}

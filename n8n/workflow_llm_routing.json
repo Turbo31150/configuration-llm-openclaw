@@ -1,0 +1,114 @@
+{
+  "name": "LLM Dual Routing — M1+M2 Sync",
+  "nodes": [
+    {
+      "id": "trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "path": "llm-ask",
+        "responseMode": "responseNode",
+        "httpMethod": "POST"
+      }
+    },
+    {
+      "id": "m1-qwen",
+      "name": "M1 — Qwen3.5-9B",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 150],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:1234/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type","value": "application/json"}]},
+        "sendBody": true,
+        "contentType": "json",
+        "body": "={\"model\":\"qwen/qwen3.5-9b\",\"messages\":[{\"role\":\"system\",\"content\":\"Tu es un assistant concis.\"},{\"role\":\"user\",\"content\":\"{{ $json.prompt }}\"}],\"max_tokens\":3000,\"temperature\":0.2}",
+        "options": {"timeout": 120000}
+      }
+    },
+    {
+      "id": "m1-r1",
+      "name": "M1 — DeepSeek-R1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:1234/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type","value": "application/json"}]},
+        "sendBody": true,
+        "contentType": "json",
+        "body": "={\"model\":\"deepseek/deepseek-r1-0528-qwen3-8b\",\"messages\":[{\"role\":\"system\",\"content\":\"Tu es un assistant concis.\"},{\"role\":\"user\",\"content\":\"{{ $json.prompt }}\"}],\"max_tokens\":3000,\"temperature\":0.2}",
+        "options": {"timeout": 120000}
+      }
+    },
+    {
+      "id": "m2-qwen",
+      "name": "M2 — Qwen3.5-9B",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 450],
+      "parameters": {
+        "method": "POST",
+        "url": "http://192.168.1.26:1234/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type","value": "application/json"}]},
+        "sendBody": true,
+        "contentType": "json",
+        "body": "={\"model\":\"qwen/qwen3.5-9b\",\"messages\":[{\"role\":\"system\",\"content\":\"Tu es un assistant concis.\"},{\"role\":\"user\",\"content\":\"{{ $json.prompt }}\"}],\"max_tokens\":3000,\"temperature\":0.2}",
+        "options": {"timeout": 120000}
+      }
+    },
+    {
+      "id": "m2-r1",
+      "name": "M2 — DeepSeek-R1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 600],
+      "parameters": {
+        "method": "POST",
+        "url": "http://192.168.1.26:1234/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type","value": "application/json"}]},
+        "sendBody": true,
+        "contentType": "json",
+        "body": "={\"model\":\"deepseek/deepseek-r1-0528-qwen3-8b\",\"messages\":[{\"role\":\"system\",\"content\":\"Tu es un assistant concis.\"},{\"role\":\"user\",\"content\":\"{{ $json.prompt }}\"}],\"max_tokens\":3000,\"temperature\":0.2}",
+        "options": {"timeout": 120000}
+      }
+    },
+    {
+      "id": "merge",
+      "name": "Merge — Premier gagne",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [750, 375],
+      "parameters": {"mode": "chooseBranch", "chooseBranch": "waitForAll"}
+    },
+    {
+      "id": "respond",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1000, 375],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {response: $json.choices?.[0]?.message?.content || $json.response} }}"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {"main": [[{"node":"M1 — Qwen3.5-9B","type":"main","index":0},{"node":"M1 — DeepSeek-R1","type":"main","index":0},{"node":"M2 — Qwen3.5-9B","type":"main","index":0},{"node":"M2 — DeepSeek-R1","type":"main","index":0}]]},
+    "M1 — Qwen3.5-9B": {"main": [[{"node":"Merge — Premier gagne","type":"main","index":0}]]},
+    "M1 — DeepSeek-R1": {"main": [[{"node":"Merge — Premier gagne","type":"main","index":1}]]},
+    "M2 — Qwen3.5-9B":  {"main": [[{"node":"Merge — Premier gagne","type":"main","index":2}]]},
+    "M2 — DeepSeek-R1": {"main": [[{"node":"Merge — Premier gagne","type":"main","index":3}]]},
+    "Merge — Premier gagne": {"main": [[{"node":"Respond to Webhook","type":"main","index":0}]]}
+  },
+  "settings": {"executionOrder": "v1"},
+  "tags": ["llm","routing","m1","m2","openclaw","jarvis"]
+}

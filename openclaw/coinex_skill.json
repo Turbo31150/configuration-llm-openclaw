@@ -1,0 +1,124 @@
+{
+  "name": "coinex-trader",
+  "version": "1.1",
+  "description": "Pilotage trading CoinEx Futures via interface locale TradingViewMaison",
+  "base_url": "http://192.168.1.85:5555",
+  "headers": {"Content-Type": "application/json"},
+  "workflow": {
+    "before_any_order": "Toujours GET /api/coinex/account d'abord pour récupérer position_id et vérifier le solde disponible",
+    "on_success": "code=0 dans la réponse JSON",
+    "on_error": "code≠0 → lire le champ 'message' pour l'erreur"
+  },
+  "endpoints": {
+    "account": {
+      "method": "GET",
+      "url": "http://192.168.1.85:5555/api/coinex/account",
+      "description": "Récupère balance USDT, positions ouvertes, ordres en attente, funding rate",
+      "returns": ["balance[].available", "balance[].margin", "positions[].position_id", "positions[].unrealized_pnl", "positions[].side", "positions[].amount", "positions[].avg_entry_price", "positions[].liq_price", "positions[].stop_loss_price", "positions[].take_profit_price"]
+    },
+    "open": {
+      "method": "POST",
+      "url": "http://192.168.1.85:5555/api/coinex/open",
+      "description": "Ouvre une position Futures",
+      "body": {
+        "market": "RIVERUSDT",
+        "side": "buy",
+        "amount": 1,
+        "leverage": 10,
+        "order_type": "market",
+        "price": null,
+        "sl": null,
+        "tp": null
+      },
+      "notes": {
+        "side": "'buy'=LONG, 'sell'=SHORT",
+        "order_type": "'market' ou 'limit' (si limit, price obligatoire)",
+        "price": "null si market, sinon ex: '7.5000'",
+        "sl": "prix stop-loss optionnel ex: '6.80', null si non voulu",
+        "tp": "prix take-profit optionnel ex: '9.50', null si non voulu",
+        "amount": "nombre de contrats (entier pour RIVER, décimal pour BTC ex: 0.001)"
+      }
+    },
+    "close": {
+      "method": "POST",
+      "url": "http://192.168.1.85:5555/api/coinex/close",
+      "description": "Ferme une position ouverte",
+      "body": {
+        "position_id": "393323469",
+        "market": "RIVERUSDT"
+      },
+      "notes": {
+        "position_id": "récupérer via GET /account → positions[].position_id"
+      }
+    },
+    "cancel": {
+      "method": "POST",
+      "url": "http://192.168.1.85:5555/api/coinex/cancel",
+      "description": "Annule un ordre limit en attente",
+      "body": {
+        "order_id": "string",
+        "market": "RIVERUSDT"
+      }
+    },
+    "leverage": {
+      "method": "POST",
+      "url": "http://192.168.1.85:5555/api/coinex/leverage",
+      "description": "Change le levier sur un marché",
+      "body": {
+        "market": "RIVERUSDT",
+        "leverage": 20
+      }
+    },
+    "sl": {
+      "method": "POST",
+      "url": "http://192.168.1.85:5555/api/coinex/sl",
+      "description": "Modifie le Stop-Loss d'une position",
+      "body": {
+        "market": "RIVERUSDT",
+        "position_id": "393323469",
+        "price": "6.80"
+      },
+      "notes": {
+        "price": "string obligatoire, prix mark_price"
+      }
+    },
+    "tp": {
+      "method": "POST",
+      "url": "http://192.168.1.85:5555/api/coinex/tp",
+      "description": "Modifie le Take-Profit d'une position",
+      "body": {
+        "market": "RIVERUSDT",
+        "position_id": "393323469",
+        "price": "9.50"
+      }
+    },
+    "margin": {
+      "method": "POST",
+      "url": "http://192.168.1.85:5555/api/coinex/margin",
+      "description": "Ajoute ou retire de la marge sur une position isolée",
+      "body": {
+        "market": "RIVERUSDT",
+        "position_id": "393323469",
+        "amount": 10,
+        "direction": "add"
+      },
+      "notes": {
+        "direction": "'add'=ajouter marge, 'sub'=retirer marge",
+        "amount": "nombre décimal USDT"
+      }
+    }
+  },
+  "natural_language_mapping": [
+    {"phrase": "mon compte coinex", "action": "GET /api/coinex/account"},
+    {"phrase": "pnl actuel", "action": "GET /api/coinex/account → lire positions[].unrealized_pnl"},
+    {"phrase": "ouvre RIVER long 5 levier 20", "action": "POST /api/coinex/open {market:RIVERUSDT, side:buy, amount:5, leverage:20, order_type:market}"},
+    {"phrase": "ouvre BTC short 0.001 levier 10", "action": "POST /api/coinex/open {market:BTCUSDT, side:sell, amount:0.001, leverage:10, order_type:market}"},
+    {"phrase": "ferme ma position RIVER", "action": "1) GET /account → positions[0].position_id  2) POST /close {position_id, market:RIVERUSDT}"},
+    {"phrase": "set SL à 6.80", "action": "1) GET /account → position_id  2) POST /sl {price:'6.80', position_id, market:RIVERUSDT}"},
+    {"phrase": "set TP à 9.50", "action": "1) GET /account → position_id  2) POST /tp {price:'9.50', position_id, market:RIVERUSDT}"},
+    {"phrase": "ajoute 20 USDT marge", "action": "1) GET /account → position_id  2) POST /margin {direction:add, amount:20, position_id, market:RIVERUSDT}"},
+    {"phrase": "retire 10 USDT marge", "action": "1) GET /account → position_id  2) POST /margin {direction:sub, amount:10, position_id, market:RIVERUSDT}"},
+    {"phrase": "levier 15 sur RIVER", "action": "POST /api/coinex/leverage {market:RIVERUSDT, leverage:15}"}
+  ],
+  "markets_disponibles": ["RIVERUSDT", "BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT", "XRPUSDT", "DOGEUSDT"]
+}
