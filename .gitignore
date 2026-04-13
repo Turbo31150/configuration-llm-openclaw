@@ -2,3 +2,6 @@ n8n/backup_*/n8nEventLog*.log
 n8n/backup_*/crash.journal
 n8n/backup_*/*.sqlite-shm
 n8n/backup_*/*.sqlite-wal
+core
+*.sqlite
+n8n/backup_*/*.sqlite
